@@ -3,7 +3,7 @@ import React, {useEffect,useState} from "react";
 import { useParams } from "react-router-dom";
 import "./Details.css";
 
-export const Details =()=>{
+ const Details =()=>{
     const[data,setData]=useState([]);
 
     const parems = useParams();
@@ -33,5 +33,5 @@ export const Details =()=>{
     );
 };
 
-
+export default Details
 
