@@ -1,6 +1,7 @@
 import axios from "axios";
 import React,{useEffect,useState} from "react";
 import "./Homepage.css";
+import { Link } from "react-router-dom";
 
 
 const Homepage=({inp})=>{
@@ -29,14 +30,14 @@ useEffect(()=>{
 return(
 <div className="main">
    {filterdata.map((val,i)=>(
-    <a href={`/details/${val.id}`}className="box" key={i}>
+    <Link to={`/details/${val.id}`}className="box" key={i}>
     <div>
         <img src={val.thumbnail} alt="" />
         <h1>{val.title}</h1>
         <p>{val.brand}</p>
         <p>{val.category}</p>
     </div>
-    </a>
+    </Link>
    ))} 
  </div>
 );
