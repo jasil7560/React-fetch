@@ -1,21 +1,18 @@
 
 import './App.css'
 import Homepage from './components/Homepage';
-import Details from './components/Details';
+import Details from './components/details';
 import { BrowserRouter,Routes,Route} from 'react-router-dom'
-import Navbar from './components/Navbar';
-import { useState } from 'react';
 
 function App() {
 
-  const[inp,setInp]=useState("")
+ 
 
   return (
     <>
     <BrowserRouter>
-    <Navbar setInp={setInp}/>
     <Routes>
-    <Route path='/' element={<Homepage inp={inp}/>}/>
+    <Route path='/' element={<Homepage />}/>
     <Route path='/details/:id' element={<Details/>}/>
     </Routes>
     </BrowserRouter>

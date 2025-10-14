@@ -2,12 +2,15 @@ import axios from "axios";
 import React,{useEffect,useState} from "react";
 import "./Homepage.css";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar"
+import Footer from "./Footer";
 
 
-const Homepage=({inp})=>{
+
+const Homepage=()=>{
     const[data,setData]=useState([]);
     const [filterdata, setFilterdata]=useState([]);
-    
+     const[inp,setInp]=useState("")
 
     async function FetchData() {
         const res=await axios.get("https://dummyjson.com/products");
@@ -28,7 +31,10 @@ useEffect(()=>{
 
 
 return(
-<div className="main">
+<div >
+
+    <Navbar setInp={setInp}/>
+        <div className="main">
    {filterdata.map((val,i)=>(
     <Link to={`/details/${val.id}`}className="box" key={i}>
     <div>
@@ -39,6 +45,9 @@ return(
     </div>
     </Link>
    ))} 
+   </div>
+   <Footer />
+
  </div>
 );
 };

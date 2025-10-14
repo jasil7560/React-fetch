@@ -1,12 +1,15 @@
 import React from "react";
+import "./Navbar.css";
 
 const Navbar=({setInp})=>{
 
 
 
     return(
-        <div>
-            <input type="text" onChange={(e)=>(setInp(e.target.value))} />
+        <div className="div1">
+            <div className="div2">
+            <input className="inp" type="text" onChange={(e)=>(setInp(e.target.value))} />
+            </div>
         </div>
 
     )
